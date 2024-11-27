@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes blink {
+                        0%, 100% { color: rgb(255, 0, 0); }   /* Start and end with red */
+                        50% { color: rgb(255, 213, 0); } 
+                        40% { color: rgb(242, 255, 0); }       /* Midway through, change to blue */
+                        }
+
+        h1 {
+            animation: blink 0.5s infinite;  /* Apply the blinking animation */
+            font-size: 36px;              /* Adjust the font size */
+            }
+        th{
+            animation: blink 9s infinite;
+            }
+        td{
+            animation: blink 15s infinite;
+            }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>DEPARTMENT</h1>
+        <table border="5px" >
+            <tr>
+                <th>sno</th>
+                <th>subject</th>
+                <th>gmail</th>
+            </tr>
+            <tbody>
+                {% for i in dept %}
+                <tr>
+                    <td>{{i.sno}}</td>
+                    <td>{{i.subject}}</td>
+                    <td>{{i.gmail}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h1>STUDENT</h1>
+            <table border="5px" >
+                <tr>
+                    <th>sno</th>
+                    <th>sname</th>
+                    <th>number</th>
+                    <th>standard</th>
+                </tr>
+                <tbody>
+                    {% for i in std %}
+                    <tr>
+                        <td>{{i.sno}}</td>
+                        <td>{{i.sname}}</td>
+                        <td>{{i.number}}</td>
+                        <td>{{i.standard}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        <h1>FEES</h1>
+            <table border="5px" >
+                <tr>
+                    <th>sname</th>
+                    <th>amount</th>
+                </tr>
+                <tbody>
+                    {% for i in fee %}
+                    <tr>
+                        <td>{{i.sname}}</td>
+                        <td>{{i.amount}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </center>
+</body>
+</html>
